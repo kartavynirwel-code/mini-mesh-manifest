@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeting-service-deployment
+  labels:
+    app: greeting-service-pod
+spec:
+  selector:
+    matchLabels:
+      app: greeting-service-pod
+  template:
+    metadata:
+      labels:
+        app: greeting-service-pod
+    spec:
+      containers:
+      - name: greeting-service
+        image: mini-mesh-greeting-service:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: GREETING_MESSAGE
+          valueFrom:
+            secretKeyRef:
+              name: mini-mesh-secrets
+              key: GREETING_MESSAGE
+        - name: USER_SERVICE_URL
+          valueFrom:
+            secretKeyRef:
+              name: mini-mesh-secrets
+              key: USER_SERVICE_URL
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8080

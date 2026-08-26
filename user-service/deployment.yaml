@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service-deployment
+  labels:
+    app: user-service-pod
+spec:
+  selector:
+    matchLabels:
+      app: user-service-pod
+  template:
+    metadata:
+      labels:
+        app: user-service-pod
+    spec:
+      containers:
+      - name: user-service
+        image: mini-mesh-user-service:latest
+        imagePullPolicy: IfNotPresent 
+        env:
+        - name: NOTIFICATION_SERVICE_URL
+          valueFrom:
+            secretKeyRef:
+              name: mini-mesh-secrets
+              key: NOTIFICATION_SERVICE_URL
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8081
