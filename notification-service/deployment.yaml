@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: notification-service
-        image: mini-mesh-notification-service:9
+        image: kartavyanirwel/mini-mesh-notification-service:9
         imagePullPolicy: Always
         resources:
           limits:
