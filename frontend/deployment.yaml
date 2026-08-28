@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kartavyanirwel/mini-mesh-frontend:10
+        image: kartavyanirwel/mini-mesh-frontend:11
         imagePullPolicy: Always
         env:
         - name: GREETING_SERVICE_URL
