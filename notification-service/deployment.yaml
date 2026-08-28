@@ -16,11 +16,7 @@ spec:
       containers:
       - name: notification-service
         image: mini-mesh-notification-service:9
-<<<<<<< HEAD
-        imagePullPolicy: IfNotPresent
-=======
         imagePullPolicy: Always
->>>>>>> 6747aec (KT: manually edited the yaml files for docker issue)
         resources:
           limits:
             memory: "256Mi"

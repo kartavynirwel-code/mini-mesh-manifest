@@ -17,11 +17,7 @@ spec:
       containers:
       - name: frontend
         image: mini-mesh-frontend:9
-<<<<<<< HEAD
-        imagePullPolicy: IfNotPresent
-=======
         imagePullPolicy: Always
->>>>>>> 6747aec (KT: manually edited the yaml files for docker issue)
         env:
         - name: GREETING_SERVICE_URL
           valueFrom:
