@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: mini-mesh-user-service:9
+        image: mini-mesh-user-service:latest
         imagePullPolicy: IfNotPresent 
         env:
         - name: NOTIFICATION_SERVICE_URL
