@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: kartavyanirwel/mini-mesh-user-service:12
+        image: kartavyanirwel/mini-mesh-user-service:13
         imagePullPolicy: Always 
         env:
         - name: NOTIFICATION_SERVICE_URL

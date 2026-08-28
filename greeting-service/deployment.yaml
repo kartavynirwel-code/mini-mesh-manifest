@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: greeting-service
-        image: kartavyanirwel/mini-mesh-greeting-service:12
+        image: kartavyanirwel/mini-mesh-greeting-service:13
         imagePullPolicy: Always
         env:
         - name: GREETING_MESSAGE
